@@ -68,10 +68,7 @@ Template.login.events({
     
     if (phone.value) {
 
-      //let otp = Math.random().toString(36).substring(7);
       let userPhone = phone.value;
-      //options.password = otp;
-
       Accounts.createUserWithPhone({
         phone: userPhone,
         profile: {
@@ -92,8 +89,34 @@ Template.login.events({
 
     }
 
-    if (email.value)
+    if (email.value) {
+
+      let otp = Math.random().toString(36).substring(7);
+      let user = {
+        email: email.value,
+        password: otp,
+      };
+
+      Accounts.createUser(user, (error) => {
+        if (error) {
+          Bert.alert(error.reason, 'danger');
+
+        } else {
+          Meteor.call('sendVerificationLink', ( error, response ) => {
+            if (error) {
+
+              Bert.alert( error.reason, 'danger' );
+
+            } else {
+
+              Bert.alert( 'Welcome!', 'success' );
+            }
+          });
+        }
+      });
+
       Session.set('error', '');
+    }
 
   },
   "click #logout": function (err, tmpl) {
