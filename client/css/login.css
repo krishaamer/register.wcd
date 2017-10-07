@@ -1,3 +1,4 @@
 #login-box {
 	background: url("box-big.svg") no-repeat;
+	background-size: cover;
 }

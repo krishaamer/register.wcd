@@ -6,11 +6,9 @@ Meteor.publish("access_token", function () {
 
 Accounts.onCreateUser(function (options, user) {
 
-	console.log(user);
-
-	console.log("hell0");
-
 	if (user.services.phone) {
+
+		console.log(user.services.phone);
 
 		// Configure the Twilio client
 		var client = new Twilio({
@@ -48,6 +46,10 @@ Accounts.onCreateUser(function (options, user) {
 		    }
 		 };
 		*/
+	}
+
+	if (user.services.emai) {
+
 	}
 
 	if (user.services.facebook) {

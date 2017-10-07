@@ -34,7 +34,7 @@ tap:i18n-ui
 tomwasd:history-polyfill
 zimme:active-route
 jquery@1.11.10
-session@1.1.7
+session
 accounts-base
 accounts-password
 accounts-facebook

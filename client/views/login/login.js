@@ -27,7 +27,55 @@ Template.login.onRendered(function (){
 	  });
 });
 
+Template.login.helpers({
+  error () {
+
+    error = Session.get('error');
+    if(error)
+      return error;
+    else
+      return false;
+  },
+});
+
 Template.login.events({
+  'submit .register'(event) {
+
+    event.preventDefault();
+    const country = event.target.country;
+    const email = event.target.email;
+    const phone = event.target.phone;
+
+    if (!phone.value && !email.value) {
+
+      Session.set('error', 'Please provide at least one');
+    } else {
+
+      FlowRouter.go("/register");
+    }
+    
+    if (phone.value) {
+
+      let options = {phone:phone.value};
+      Accounts.createUserWithPhone(options, function (){});
+      Session.set('error', 'Thank you!');
+    }
+
+    if (email.value) {
+
+      Session.set('error', 'Thank you!');
+      
+    }
+
+    
+    // Insert a task into the collection
+    /*
+    Tasks.insert({
+      text,
+      createdAt: new Date(), // current time
+    });
+    */
+  },
   "click #logout": function (err, tmpl) {
     Meteor.logout(function (err) {      
       if (err) {
