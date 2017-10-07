@@ -3,6 +3,20 @@
             <div class="ui basic very padded segment">
                   <form class="ui massive form register">
                         <div class="field">
+                              <div class="ui left icon input">
+                                    <!--<img src="/email.svg" class="ui mini image" /> -->
+                                    <input type="text" name="email" placeholder="{{_ 'your email'}}">
+                                    <i class="mail outline blue icon"></i>
+                              </div>
+                        </div>
+                        <div class="field">
+                              <div class="ui left icon input">
+                                    <!--<img src="/phone.svg" class="ui mini image" /> -->
+                                    <input type="text" name="phone" placeholder="{{_ 'your phone'}}">
+                                    <i class="call blue icon"></i>
+                              </div>
+                        </div>
+                        <div class="field">
                               <div class="ui search selection massive dropdown">
                                     <input type="hidden" name="country">
                                     <i class="blue left marker icon"></i>
@@ -254,26 +268,12 @@
                                     </div>
                               </div>
                         </div>
-                        <div class="field">
-                            <div class="ui left icon input">
-                                <!--<img src="/phone.svg" class="ui mini image" /> -->
-                                <input type="text" name="phone" placeholder="{{_ 'your phone'}}">
-                                <i class="call blue icon"></i>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <div class="ui left icon input">
-                                <!--<img src="/email.svg" class="ui mini image" /> -->
-                                <input type="text" name="email" placeholder="{{_ 'your email'}}">
-                                <i class="mail outline blue icon"></i>
-                            </div>
-                        </div>
                         <div class="two fields">
                               <div class="field">
                                     {{#if error}}
                                            <p style="color:#fff;">{{error}}</p>
                                     {{else}}
-                                          <p style="color:#fff;">{{_ "Please provide at least one"}}</p>
+                                          <p style="color:#fff;">{{_ "Please provide at least one contact method"}}</p>
                                     {{/if}} 
                               </div>
                               <div class="field">

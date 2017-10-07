@@ -1,9 +1,9 @@
 <template name="header">
-	<div class="ui massive fixed secondary menu elementToFadeInAndOut" id="firstmenu">
-		<a href="/" class="item {{isActiveRoute 'home'}}" alt="{{_ 'World Cleanup Day'}}" >
+	<div class="ui massive fixed secondary menu elementToFadeInAndOut" id="firstmenu" style="pointer-events: none;">
+		<a href="/" class="item {{isActiveRoute 'home'}}" alt="{{_ 'World Cleanup Day'}}" style="pointer-events: all;">
 			<img src="http://res.cloudinary.com/wcd/image/upload/c_scale,q_auto,w_400/v1499612513/world-cleanup-day-logo.png" class="ui tiny image"  style="display: inline-block;" />
 		</a>
-		<div class="right item">
+		<div class="right item" style="pointer-events: all;">
 			{{> i18n_dropdown_semantic}}  
 		</div>
 	</div>

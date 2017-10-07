@@ -31,3 +31,17 @@ Template.intro.helpers({
     return name;
   },
 });
+
+Template.intro.events({
+  "click #logout": function (err, tmpl) {
+    Meteor.logout(function (err) {      
+      if (err) {
+        //Session.set("status", err.reason);
+        //analytics.track("Logout error");
+        
+      } else {
+        //analytics.track("Logout success");
+      }
+    })
+  },
+})

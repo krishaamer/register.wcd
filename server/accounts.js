@@ -8,51 +8,32 @@ Accounts.onCreateUser(function (options, user) {
 
 	if (user.services.phone) {
 
-		console.log(user.services.phone);
+		let userPhone = options.profile.phone;
 
-		// Configure the Twilio client
-		var client = new Twilio({
+		let sms = new Twilio({
 		  from: '+37258821463',
 		  sid: 'ACb26de4522ecdd582d6bc603de0ad7348',
 		  token: '352a128bc687411a3673e6074c56d947'
 		});
 
-		// Send a message
-		client.sendSMS({
-		  to: '+37253073123',
-		  body: 'Hello world!'
+		sms.sendSMS({
+		  to: userPhone,
+		  body: "Yay! Welcome to World Cleanup Day! You've registered your phone number " + userPhone + " to receive updates.",
 		});
 
-
 		/*
-		let options = {phone:'+37253073123'};
-		options.password = 'VeryHardPassword';
-		Accounts.createUserWithPhone(options, function (){});
 		//console.log('Phone verification status is :', Accounts.isPhoneVerified());
-
-		SMS.twilio = {
-			FROM: '+37258821463', 
-			ACCOUNT_SID: 'ACb26de4522ecdd582d6bc603de0ad7348', 
-			AUTH_TOKEN: '352a128bc687411a3673e6074c56d947'
-		};
-
-		SMS.send = function (options) {};
-
-		SMS.phoneTemplates = {
-		    from: '+37258821463',
-		    text: function (user, code) {
-
-		        return 'Welcome your invitation code is: ' + code;
-		    }
-		 };
 		*/
 	}
 
-	if (user.services.emai) {
+	if (user.services.email) {
+
+		console.log("email");
 
 	}
 
 	if (user.services.facebook) {
+
 	    let accessToken = user.services.facebook.accessToken, result, profile;
 		result = Meteor.http.get("https://graph.facebook.com/me", {
 			params: {
@@ -60,14 +41,7 @@ Accounts.onCreateUser(function (options, user) {
 			}
 		});
 
-		/*
-		if (result.error)
-			throw result.error;
-		*/
-
 		profile = _.pick(result.data, "services.facebook.name", "services.facebook.picture", "services.facebook.email");
-
-		// We still want the default hook's 'profile' behavior.
 		if (options.profile) {
 
 			options.profile.picture 	= "http://graph.facebook.com/" + user.services.facebook.id + "/picture/?type=large";

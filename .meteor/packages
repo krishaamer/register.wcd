@@ -42,3 +42,5 @@ service-configuration
 enweiwt:accounts-phone
 dispatch:twilio
 aldeed:autoform
+nekolski:all-geolocation
+aldeed:geocoder

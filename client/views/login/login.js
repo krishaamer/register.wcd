@@ -1,8 +1,20 @@
 Template.login.onRendered(function (){
 	
 	$('.ui.dropdown').dropdown();
+  Session.set('error', '');
 
-	$('.form').form({
+  AllGeo.getLocationByNavigator(function(loc){
+
+    Meteor.call('geocode', loc, (error, result) => {
+
+      let countryCode = result[0].countryCode;
+      countryCode = countryCode.toLowerCase();
+
+      $('.ui.dropdown').dropdown('set selected', countryCode);
+    });    
+  });
+
+	$('.register').form({
 	    on: 'blur',
 	    fields: {
 	      empty: {
@@ -48,33 +60,41 @@ Template.login.events({
 
     if (!phone.value && !email.value) {
 
-      Session.set('error', 'Please provide at least one');
+      Session.set('error', 'Please provide at least one contact method');
     } else {
 
-      FlowRouter.go("/register");
+      //FlowRouter.go("/register");
     }
     
     if (phone.value) {
 
-      let options = {phone:phone.value};
-      Accounts.createUserWithPhone(options, function (){});
-      Session.set('error', 'Thank you!');
+      //let otp = Math.random().toString(36).substring(7);
+      let userPhone = phone.value;
+      //options.password = otp;
+
+      Accounts.createUserWithPhone({
+        phone: userPhone,
+        profile: {
+          name: 'My friend',
+          phone: userPhone,
+        }
+      }, () => {
+
+        Meteor.setTimeout(() => {
+          FlowRouter.go("/register");
+        }, 500);
+
+        Session.set("error", "User registered! Redirecting..");
+
+      });
+
+      Session.set("error", "Thank you and welcome!");
+
     }
 
-    if (email.value) {
+    if (email.value)
+      Session.set('error', '');
 
-      Session.set('error', 'Thank you!');
-      
-    }
-
-    
-    // Insert a task into the collection
-    /*
-    Tasks.insert({
-      text,
-      createdAt: new Date(), // current time
-    });
-    */
   },
   "click #logout": function (err, tmpl) {
     Meteor.logout(function (err) {      
