@@ -7,14 +7,6 @@
 					{{#if currentUser}}
 						<h1>{{_ "Hi"}} {{helloName}}!</h1>
 						<h2>You're one of the 400M heroes cleaning up the planet! Stay tuned for more information on March 3, 2018!</h2>
-
-
-						<h1>{{_ "What do you want to do?"}}</h1>
-						<ul>
-							<li>Become an area leader</li>
-							<li>Clean up trash</li>
-							<li>Map trash</li>
-						</ul>
 					{{else}}
 						<h1><span>{{_ "World Cleanup Day"}}</span></h1>
 						<div class="ui statistic">
@@ -24,8 +16,14 @@
 					{{/if}}
 				</div>
 				{{#unless currentUser}}
-					<button class="ui large pink button" id="login" data-content="{{_ 'Create account or login'}}" data-variation="inverted">	
-						{{_ "Join in"}}
+					<button class="ui large yellow button" id="login-email" data-content="{{_ 'Create account or login'}}" data-variation="inverted">	
+						{{_ "Join with Email"}}
+					</button>
+					<button class="ui large pink button" id="login-phone" data-content="{{_ 'Create account or login'}}" data-variation="inverted">	
+						{{_ "Join with Phone"}}
+					</button>
+					<button class="ui large blue facebook button" id="login-fb" data-content="{{_ 'Create account or login'}}" data-variation="inverted">	
+						{{_ "Join with Facebook"}}
 					</button>
 				{{/unless}}		
 			</div>
@@ -36,7 +34,7 @@
 				</div>
 
 				{{#if currentUser}}
-					<button class="ui large pink button" id="logout" data-content="{{_ 'Logout'}}" data-variation="inverted">
+					<button class="ui large blue button" id="logout" data-content="{{_ 'Logout'}}" data-variation="inverted">
 						<i class="lock icon"></i>
 						{{_ "Log out"}} {{helloName}}!
 					</button>
