@@ -1,18 +1,15 @@
 <template name="header">
 	<div class="ui massive fixed secondary menu elementToFadeInAndOut" id="firstmenu" style="pointer-events: none;">
 		<a href="/" class="item {{isActiveRoute 'home'}}" alt="{{_ 'World Cleanup Day'}}" style="pointer-events: all;">
-			<img src="http://res.cloudinary.com/wcd/image/upload/c_scale,q_auto,w_400/v1499612513/world-cleanup-day-logo.png" class="ui tiny image"  style="display: inline-block;" />
+			<img src="https://res.cloudinary.com/wcd/image/upload/c_scale,q_auto,w_400/v1499612513/world-cleanup-day-logo.png" class="ui tiny image"  style="display: inline-block;" />
 		</a>
 		<div class="right item" style="pointer-events: all;">
 			{{> i18n_dropdown_semantic}}  
 		</div>
 	</div>
-	<div class="ui fixed secondary item menu" id="mobilemenu">
-		<div class="ui text container">
-			<a href="/" class="item {{isActiveRoute 'home'}}" alt="{{_ 'World Cleanup Day'}}">{{_ 'Home'}}</a>
-			<div class="item">
-				{{> i18n_dropdown_semantic}}  
-			</div>
+	<div class="ui fixed secondary menu" id="mobilemenu">
+		<div class="item">
+			{{> i18n_dropdown_semantic}}  
 		</div>
 	</div>
 	<div class="ui text container" id="cta" style="padding-top: 3rem;">

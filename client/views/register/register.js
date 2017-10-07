@@ -5,6 +5,11 @@ Template.register.onCreated(function (){
 
 		self.subscribe('register', TAPi18n.getLanguage());
 	});
+
+	if (GoogleMaps.maps.bigmap)
+		console.log(GoogleMaps.maps.bigmap);
+
+	//google.maps.event.trigger(, 'resize');
 });
 
 Template.register.helpers({
