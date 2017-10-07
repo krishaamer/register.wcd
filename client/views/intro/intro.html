@@ -4,21 +4,33 @@
 		<div class="ui center aligned grid container">
 			<div class="sixteen wide column elementToFadeInAndOut">
 				<div class="ui very padded basic segment">
+					{{#if currentUser}}
+						<h2>{{_ "Hi"}} {{helloName}}!</h2>
+					{{/if}}
 					<h1 class="title">{{_ "World Cleanup Day"}}</h1>
 					<div class="ui statistic">
 					  <div class="value">15.09.2018</div>
 					  <div class="label">{{paragraph1}}</div>
 					</div>
 				</div>
+				{{#unless currentUser}}
+					<button class="ui large pink button" id="login" data-content="{{_ 'Create account or login'}}" data-variation="inverted">	
+						{{_ "Join in"}}
+					</button>
+				{{/unless}}		
 			</div>
 			<div class="sixteen wide column elementToFadeInAndOut">
 				<div class="ui very padded basic segment">
 					<h1>{{{renderMarkdown paragraph2}}}</h1>
 					<br />
-					<h1>
-						<a href="/register" style="color: #e03997;text-decoration: underline;">{{_ "Register"}}</a>
-					</h1>
 				</div>
+
+				{{#if currentUser}}
+					<button class="ui large pink button" id="logout" data-content="{{_ 'Logout'}}" data-variation="inverted">
+						<i class="lock icon"></i>
+						{{_ "Log out"}} {{helloName}}!
+					</button>
+				{{/if}}
 			</div>
 		</div>
 		{{/with}}

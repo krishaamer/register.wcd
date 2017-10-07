@@ -2,14 +2,16 @@
 
 body {
 
-	background: #000 url("/4.jpg") no-repeat;
+	background: #000 url("/1.jpg") no-repeat;
 	background-size: cover;
 }
 
 #__blaze-root {
 
+	/*
 	background: rgba(0, 0, 0, 0.8);
 	height: fit-content;
+	*/
 }
 
 html, body, div, span, h1, h2, h3, h4, h5, h6, p, .ui {
