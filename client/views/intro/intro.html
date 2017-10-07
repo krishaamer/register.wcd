@@ -4,6 +4,7 @@
 		<div class="ui center aligned grid container">
 			<div class="sixteen wide column elementToFadeInAndOut">
 				<div class="ui very padded basic segment">
+					<h1 style="color: #0f81e9;">{{_ "Become part of world's largest civic action!"}}</h1>
 					{{#if currentUser}}
 						<h1>{{_ "Hi"}} {{helloName}}!</h1>
 						<h2>You're one of the 400M heroes cleaning up the planet! Stay tuned for more information on March 3, 2018!</h2>
@@ -14,32 +15,25 @@
 						  <div class="label">{{ _"The largest civil society movement on the Planet"}}</div>
 						</div>
 					{{/if}}
-				</div>
-				{{#unless currentUser}}
-					<button class="ui large yellow button" id="login-email" data-content="{{_ 'Create account or login'}}" data-variation="inverted">	
-						{{_ "Join with Email"}}
-					</button>
-					<button class="ui large pink button" id="login-phone" data-content="{{_ 'Create account or login'}}" data-variation="inverted">	
-						{{_ "Join with Phone"}}
-					</button>
-					<button class="ui large blue facebook button" id="login-fb" data-content="{{_ 'Create account or login'}}" data-variation="inverted">	
-						{{_ "Join with Facebook"}}
-					</button>
-				{{/unless}}		
+						<!--<div class="ui very padded basic segment">
+							<h1>{{{renderMarkdown paragraph2}}}</h1>
+							<br />
+						</div>-->
+				</div>	
 			</div>
-			<div class="sixteen wide column elementToFadeInAndOut">
-				<div class="ui very padded basic segment">
-					<!--<h1>{{{renderMarkdown paragraph2}}}</h1>-->
-					<br />
-				</div>
+		</div>
+		<div class="ui text container elementToFadeInAndOut">
+		
+			{{#unless currentUser}}
+				{{> login}}
+			{{/unless}} 
 
-				{{#if currentUser}}
-					<button class="ui large blue button" id="logout" data-content="{{_ 'Logout'}}" data-variation="inverted">
-						<i class="lock icon"></i>
-						{{_ "Log out"}} {{helloName}}!
-					</button>
-				{{/if}}
-			</div>
+			{{#if currentUser}}
+				<button class="ui large blue button" id="logout" data-content="{{_ 'Logout'}}" data-variation="inverted">
+					<i class="lock icon"></i>
+					{{_ "Log out"}} {{helloName}}!
+				</button>
+			{{/if}}
 		</div>
 		{{/with}}
 	{{else}}

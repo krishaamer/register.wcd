@@ -2,7 +2,7 @@
 
 body {
 
-	background: #000 url("/1.jpg") no-repeat;
+	background: #000 url("http://res.cloudinary.com/worldcleanupday/image/upload/c_scale,q_auto:best,w_2800/v1507383458/11_zecae8.jpg") no-repeat;
 	background-size: cover;
 }
 
