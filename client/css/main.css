@@ -8,10 +8,12 @@ body {
 
 #__blaze-root {
 
-	/*
+}
+
+.dimmed {
+
 	background: rgba(0, 0, 0, 0.8);
 	height: fit-content;
-	*/
 }
 
 html, body, div, span, h1, h2, h3, h4, h5, h6, p, .ui {
@@ -37,14 +39,16 @@ h2, h3, h4, h5, h6 {
 
 h1 {
 
-	font-size: 2.5rem;
+	font-size: 4rem;
 	font-weight: 500;
 	color: #fff;
 }
 
-h1.title {
-
-	font-size: 4rem;
+h1 span {
+	background-color: #0f81e9;
+    border-color: rgba(255,255,255,0.2);
+    color: #fff;
+    padding: 1rem;
 }
 
 .pageTitle {
