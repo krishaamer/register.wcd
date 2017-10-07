@@ -1,0 +1,22 @@
+<template name="header">
+	<div class="ui massive fixed secondary two item menu elementToFadeInAndOut" id="firstmenu">
+		<div class="ui container">
+			<a href="/" class="item {{isActiveRoute 'home'}}" alt="{{_ 'World Cleanup Day'}}" >
+				<img src="http://res.cloudinary.com/wcd/image/upload/c_scale,q_auto,w_400/v1499612513/world-cleanup-day-logo.png" class="ui tiny image"  style="display: inline-block;" />
+			</a>
+			<a href="/register" class="item {{isActiveRoute regex='register'}}" alt="{{_ 'Register'}}">{{_ 'Register'}}</a>
+			<div class="item">
+				{{> i18n_dropdown_semantic}}  
+			</div>
+		</div>
+	</div>
+	<div class="ui fixed secondary item menu" id="mobilemenu">
+		<div class="ui text container">
+			<a href="/" class="item {{isActiveRoute 'home'}}" alt="{{_ 'World Cleanup Day'}}">{{_ 'Home'}}</a>
+			<a href="/register" class="item {{isActiveRoute 'register'}}" alt="{{_ 'Register'}}">{{_ 'Register'}}</a>
+			<div class="item">
+				{{> i18n_dropdown_semantic}}  
+			</div>
+		</div>
+	</div>
+</template>

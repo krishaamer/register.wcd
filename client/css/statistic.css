@@ -1,0 +1,10 @@
+.ui.statistics .statistic > .value, .ui.statistic > .value {
+	
+	font-size: 7rem !important;
+	color: #e03997;
+}
+
+.ui.statistics .statistic > .label, .ui.statistic > .label {
+
+	color: #fff;
+}

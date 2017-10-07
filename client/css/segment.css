@@ -1,0 +1,42 @@
+.ui.segment {
+
+	box-shadow: 0px 2px 3px 0 rgba(34, 36, 38, 0.15);
+}
+
+.ui.segment {
+
+	border: none;
+	border-radius: 10px;
+	padding: 0em;
+}
+
+.ui.basic.segment {
+
+	border-radius: 10px;
+}
+
+.ui.segment.single {
+
+	margin-bottom: 30px;
+	border-radius: 0px;
+}
+
+.ui.segment.forty {
+
+	margin: 0.5rem auto;
+	border: none;
+	border-radius: 10px;
+	width: 40% !important;
+	padding: 0em 0em 1em 0em;
+}
+
+.ui.segment.fifty {
+
+	margin: 0.5rem auto;
+	border: none;
+	border-radius: 10px;
+	width: 50%;
+	background-color: #fffefa;
+	border: 0.5rem solid rgba(46, 132, 252, 0);
+	margin-bottom: 2rem;
+}

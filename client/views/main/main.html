@@ -1,0 +1,22 @@
+<head>
+  	<title>TrashHack Bucharest 11.11.2017</title>
+  	<meta charset="utf-8" /> 
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=no">
+</head>
+
+<body></body>
+
+<template name="layout">
+	<div class="ui container">
+		{{#momentum plugin='flow-router'}}
+		{{> Template.dynamic template=header}}
+		{{> Template.dynamic template=notifications}}
+		{{> Template.dynamic template=belowHeader}}
+		{{> Template.dynamic template=aboveContent}}
+		{{> Template.dynamic template=content}}
+		{{> Template.dynamic template=belowContent}}
+		{{> Template.dynamic template=aboveFooter}}
+		{{> Template.dynamic template=footer}}
+		{{/momentum}}
+	</div>
+</template>

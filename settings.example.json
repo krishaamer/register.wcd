@@ -1,0 +1,17 @@
+{
+  "public": {
+    "ROOT_URL": "",
+    "SITE_NAME": "",
+    "SITE_DESC": "",
+    "DEFAULT_LOCALE": "en_US",
+    "analyticsSettings": {
+      "Google Analytics" : {"trackingId": ""}
+    }
+  },
+  "galaxy.meteor.com": {
+    "env": {
+      "ROOT_URL": "",
+      "MONGO_URL": ""
+    }
+  }
+}

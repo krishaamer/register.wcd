@@ -1,0 +1,3 @@
+Transitioner.setTransitions({
+  'default': 'fade'
+});

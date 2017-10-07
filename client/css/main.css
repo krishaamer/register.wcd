@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Chau+Philomene+One:400');
+
+body {
+
+	background: #000 url("/4.jpg") no-repeat;
+	background-size: cover;
+}
+
+#__blaze-root {
+
+	background: rgba(0, 0, 0, 0.8);
+	height: fit-content;
+}
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, .ui {
+
+	font-family: 'Chau Philomene One', Helvetica, Arial, serif !important;
+	text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: "liga" on;
+    word-wrap: break-word;
+}
+
+.hide {
+	
+	display: none;
+}
+
+h2, h3, h4, h5, h6 {
+
+	font-weight: 300;
+	color: #fff;
+}
+
+h1 {
+
+	font-size: 2.5rem;
+	font-weight: 500;
+	color: #fff;
+}
+
+h1.title {
+
+	font-size: 4rem;
+}
+
+.pageTitle {
+
+	position: fixed; 
+	text-align: center; 
+	top: 1.2rem; 
+	margin: 0 auto; 
+	left: 0px; 
+	right: 0px; 
+	width: 400px;
+}
+
+#notifications {
+
+	padding-top: 110px;
+}
+
+#overview {
+
+	position: fixed;
+	text-align: center;
+	top: 1.2rem;
+	margin: 0 auto;
+	left: 0px;
+	right: 0px;
+	width: 400px;
+}
+
+#footer {
+	padding-top: 30px;
+	padding-bottom: 50px;
+}

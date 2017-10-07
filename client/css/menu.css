@@ -1,0 +1,73 @@
+.ui.text.menu .item, .ui.secondary.menu .item  {
+	
+	font-family: 'Chau Philomene One', Helvetica, Arial, serif;
+	font-weight: 300;
+}
+
+.ui.massive.menu {
+    font-size: 2rem;
+}
+
+#firstmenu, #mobilemenu {
+
+	background: rgba(0, 0, 0, 0.9);
+	background: -webkit-gradient(linear,left top,left bottom,from(transparent),color-stop(0%,rgba(0,0,0,.8)),to(rgba(0,0,0,0)));
+    background: -webkit-linear-gradient(top,transparent,rgba(0,0,0,.8) 0%,rgba(0,0,0,0));
+    background: -o-linear-gradient(top,transparent 0,rgba(0,0,0,.8) 0%,rgba(0,0,0,0) 100%);
+    background: linear-gradient(180deg,transparent,rgba(0,0,0,.8) 0%,rgba(0,0,0,0));
+}
+
+img.globe {
+
+	width: 4rem; 
+	padding-right: 0.5rem;
+}
+
+.ui.secondary.menu .item {
+
+	color: #fff !important;
+}
+
+.ui.secondary.menu .active.item,
+.ui.secondary.menu .active.item:hover,
+.ui.link.menu .item:active, 
+.ui.menu .link.item:active, 
+.ui.menu a.item:active,
+.ui.secondary.menu .dropdown.item:hover, 
+.ui.secondary.menu .link.item:hover, 
+.ui.secondary.menu a.item:hover {
+
+    background: none;
+    color: #e03997 !important;
+}
+
+.tap-i18n-dropdown {
+	
+	width: 160px;
+}
+
+.ui.selection.dropdown {
+
+	border: 2px solid #c6e7ff;
+}
+
+.ui.selection.dropdown:hover {
+
+	border-color: #e03997;
+}
+
+
+.ui.selection.active.dropdown, .ui.selection.active.dropdown:hover {
+
+	border-color: #e03997;
+}
+
+.ui.selection.active.dropdown .menu, .ui.selection.active.dropdown:hover .menu {
+
+	border-color: #e03997;
+}
+
+.ui.form .field > .selection.dropdown {
+
+	font-size: 1.6rem;
+}

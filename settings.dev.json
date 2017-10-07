@@ -1,0 +1,17 @@
+{
+  "public": {
+    "ROOT_URL": "https://register.worldcleanupday.com/",
+    "SITE_NAME": "Register.WCD",
+    "SITE_DESC": "WCD Onboarding",
+    "DEFAULT_LOCALE": "en_US",
+    "analyticsSettings": {
+      "Google Analytics" : {"trackingId": ""}
+    }
+  },
+  "galaxy.meteor.com": {
+    "env": {
+      "ROOT_URL": "https://register.worldcleanupday.com/",
+      "MONGO_URL": "mongodb://wcd-client:bBstazwRFbdzbmkRkE3tdui7@ds113435.mlab.com:13435/register-wcd"
+    }
+  }
+}

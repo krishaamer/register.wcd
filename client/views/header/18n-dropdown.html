@@ -1,0 +1,14 @@
+
+<template name="i18n_dropdown_semantic_temp">
+  <span class="tap-i18n-dropdown">
+    <div class="ui form">
+      <div class="field">
+        <select class="ui floating compact dropdown search">
+          {{#each i18n_sortedLanguages}}
+            <option value="{{tag}}" selected={{i18n_isCurrentLanguage tag}}>{{name}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+  </span>
+</template>

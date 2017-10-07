@@ -1,0 +1,90 @@
+#mobilemenu {
+
+	display: none;
+}
+
+#registerForm {
+
+	margin-top: 4rem;
+
+}
+
+body.register .ui.submit.button {
+
+	margin-left: 0.25rem;
+}
+
+@media only screen and (max-width: 480px) { 
+	.ui.corner.label {
+		display: none;
+	}
+	#notifications {
+	    padding-top: 60px;
+	}
+}
+
+@media only screen and (max-width: 767px) { 
+	
+	body.register .ui.submit.button {
+
+		margin-left: 0;
+		margin-top: 0.25rem;
+	}
+
+	h1.title {
+	    font-size: 3rem !important;
+	}
+}
+
+@media only screen and (max-width: 992px) { 
+
+	#footer {
+	    position: initial;
+	    text-align: center;
+	}
+
+	#footer p {
+		font-size: 1.3rem;
+	}
+
+	#footer .ui.basic.segment {
+		padding-bottom: 90px;
+	}
+
+	#mobilemenu {
+		display: initial;
+	}
+
+	.ui.segment.single {
+		margin: 0px 10px 5px 10px;
+	}
+
+	.ui.embed {
+		margin: 0px;
+	}
+
+	.ui.segment.fifty {
+		width: 100%;
+	}
+
+	.ui.menu .text.item > *, .ui.menu .item > a:not(.ui), .ui.menu .item > p:only-child {
+		font-size: 1.3rem;
+	}
+
+	#firstmenu {
+		display: none;
+		pointer-events: none;
+	}
+
+	span.tap-i18n-dropdown {
+		width: 100%;
+	}
+	
+	.ui.segment.forty {
+		width: 100% !important;
+	}
+
+	#notifications {
+	    padding-top: 70px;
+	}
+}

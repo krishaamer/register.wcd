@@ -1,0 +1,11 @@
+<template name="photos">
+	<div class="ui six column stackable doubling grid container" id="photos">
+		{{#if Template.subscriptionsReady}}
+			{{#each photos}}
+				{{> photosItem}}
+			{{/each}}
+		{{else}}
+			{{> loading}}
+		{{/if}}
+	</div>
+</template>

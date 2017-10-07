@@ -1,0 +1,1 @@
+Photos._ensureIndex({category: -1});
