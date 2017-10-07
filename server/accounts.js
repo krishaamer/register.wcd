@@ -10,6 +10,21 @@ Accounts.onCreateUser(function (options, user) {
 
 	if (user.services.phone) {
 
+		// Configure the Twilio client
+		var client = new Twilio({
+		  from: '+37258821463',
+		  sid: 'ACb26de4522ecdd582d6bc603de0ad7348',
+		  token: '352a128bc687411a3673e6074c56d947'
+		});
+
+		// Send a message
+		client.sendSMS({
+		  to: '+37253073123',
+		  body: 'Hello world!'
+		});
+
+
+		/*
 		let options = {phone:'+37253073123'};
 		options.password = 'VeryHardPassword';
 		Accounts.createUserWithPhone(options, function (){});
@@ -30,6 +45,7 @@ Accounts.onCreateUser(function (options, user) {
 		        return 'Welcome your invitation code is: ' + code;
 		    }
 		 };
+		*/
 	}
 
 	if (user.services.facebook) {
