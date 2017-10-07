@@ -1,0 +1,3 @@
+files:
+  - source: '*18n.json'
+    translation: /%two_letters_code%.18n.json
