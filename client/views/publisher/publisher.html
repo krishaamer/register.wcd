@@ -1,0 +1,18 @@
+<template name="publisher">
+	<div class="ui basic segment">
+		<div class="ui very basic segment">
+			<h2>{{_ "Let everybody know you're a leader"}}</h2>
+
+			<form class="ui massive form publisher">
+                <div class="field">
+				    <label>Short Text</label>
+				    <textarea rows="2">{{message}}</textarea>
+				</div>
+				<div class="field">
+					<a class="ui large pink button" href="https://www.facebook.com/dialog/share?app_id={{app_id}}&display=popup&href={{uri}}" target="_blank">{{_ "Share on Facebook!"}}</a>
+					<a class="ui large pink button twitter-share-button" href="https://twitter.com/intent/tweet?original_referer={{uri}}&tw_p=tweetbutton&url={{uri}}&text={{encoded_message}}" data-size="large" rel="me" target="_blank">{{_ "Tweet it!"}}</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</template>

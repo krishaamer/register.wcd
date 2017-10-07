@@ -21,7 +21,18 @@
 	{{else}}
 		{{> loading}}
 	{{/if}}
-	<div class="ui container">
+	<div class="ui fluid container">
 		{{> map}}
+	</div>
+	<div class="ui fluid container" style="height: 800px; background-color: #ffd101;">
+		<div class="ui text container elementToFadeInAndOut">
+			<h1>{{_ "Why not tell us more about you?"}}</h1>
+
+			<h1>{{_ "I am"}}</h1>
+
+			<h1>{{_ "Volunteer"}}</h1>
+			<h1>{{_ "Team leader"}}</h1>
+			{{> publisher}}
+		</div>
 	</div>
 </template>

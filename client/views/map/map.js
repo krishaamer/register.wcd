@@ -93,7 +93,7 @@ Template.map.helpers({
   ops () {
     if (GoogleMaps.loaded()) {
       
-      let lat = 61.9241;
+      let lat = 59.9241;
       let lng = 25.7482;
 
       return {
