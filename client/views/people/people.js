@@ -13,7 +13,7 @@ Template.people.onRendered(function (){
 	q.observeChanges({
         added: function(id, fields) {
             if(!init)
-                jQuery(".usercount").animate({height: "20px"}, 100);
+                jQuery(".usercount").animate({height: "20px"}, 150);
         }
     });
 	init = false;

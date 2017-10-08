@@ -1,0 +1,8 @@
+.ui.accordion .title h1 {
+	color: #000;
+	font-size: 2.5rem;
+}
+
+.ui.accordion .title.active h1 {
+	color: #3990df;
+}

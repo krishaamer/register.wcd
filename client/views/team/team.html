@@ -1,0 +1,29 @@
+<template name="team">
+  <div class="ui basic segment">
+    <div class="ui very padded basic segment">
+      <h1 style="color:#3990df;">{{_ "Tell us more about you"}}</h1>
+      <div class="ui grid">
+        <div class="four wide column">
+          <h1 style="color:#000;">{{_ "I am:"}}</h1>
+        </div>
+        <div class="twelve wide column">
+          <div class="ui accordion">
+            <div class="title">
+              <h1>{{_ "Volunteer"}}</h1>
+            </div>
+            <div class="content">
+              <h2>It's create to be part of a fantastic team!</h2>
+            </div>
+            <div class="title">
+              <h1>{{_ "Team leader"}}</h1>
+            </div>
+            <div class="content">
+              <h2>Contact your team:</h2>
+              {{> mailer}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
