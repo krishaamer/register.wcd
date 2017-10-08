@@ -1,4 +1,4 @@
-Template.register.onCreated(function (){
+Template.live.onCreated(function (){
 	
 	let self = this;
 	self.autorun(() => {
@@ -12,7 +12,7 @@ Template.register.onCreated(function (){
 	//google.maps.event.trigger(, 'resize');
 });
 
-Template.register.helpers({
+Template.live.helpers({
 	register () {
 
 		return Register.findOne();

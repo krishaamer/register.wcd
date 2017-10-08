@@ -53,9 +53,6 @@ Template.login.events({
       Session.set('error', warning);
       Bert.alert(warning, 'danger');
 
-    } else {
-
-      //FlowRouter.go("/register");
     }
     
     if (phone.value) {
@@ -75,7 +72,7 @@ Template.login.events({
         } else {
 
           Meteor.setTimeout(() => {
-            FlowRouter.go("/register");
+            FlowRouter.go("/live");
           }, 500);
 
           Session.set("error", "User registered! Redirecting..");
@@ -106,7 +103,7 @@ Template.login.events({
             } else {
 
               Meteor.setTimeout(() => {
-                FlowRouter.go("/register");
+                FlowRouter.go("/live");
               }, 300);
 
               Bert.alert( 'Welcome!', 'success' );
@@ -150,7 +147,7 @@ Template.login.events({
             //analytics.track("Login success");
           }
 
-          FlowRouter.go("/register");
+          FlowRouter.go("/live");
       });
   },
 })
