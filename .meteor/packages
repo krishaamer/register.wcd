@@ -28,7 +28,6 @@ lookback:body-class
 philippspo:momentum-flow-router
 rafa93br:autoform-markdown
 semantic:ui
-smaltcreation:imagesloaded
 tap:i18n
 tap:i18n-ui
 tomwasd:history-polyfill
@@ -41,11 +40,8 @@ accounts-facebook
 service-configuration
 enweiwt:accounts-phone
 dispatch:twilio
-aldeed:autoform
 nekolski:all-geolocation
 aldeed:geocoder
 themeteorchef:bert
 email
 dburles:google-maps
-lukemadera:social-share
-tmeasday:publish-counts

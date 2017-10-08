@@ -19,9 +19,6 @@ Template.people.onRendered(function (){
         }
     });
 	init = false;
-
-	
-
 });
 
 Template.people.helpers({
@@ -31,7 +28,6 @@ Template.people.helpers({
 	},
 	count () {
 		
-	
 	    return Meteor.users.find().count();
 	},
 });
