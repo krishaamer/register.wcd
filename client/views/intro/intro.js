@@ -2,7 +2,6 @@ Template.intro.onCreated(function (){
 	
 	let self = this;
 	self.autorun(() => {
-		
 		self.subscribe('intro', TAPi18n.getLanguage());
 	});
 });
@@ -12,6 +11,10 @@ Template.intro.helpers({
 
 	    return Intro.findOne();
 	},
+  count () {
+    
+      return Meteor.users.find().count();
+  },
   helloName () {
 
     Meteor.subscribe("current_user_data");

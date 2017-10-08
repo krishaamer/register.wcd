@@ -1,17 +1,11 @@
 Template.map.onCreated(() => {
 
+  console.log("map created");
   GoogleMaps.load({ v: '3', key: Meteor.settings["public"].GoogleMapKey, libraries: 'geometry,places'});
-  
-/*
-  GoogleMaps.loadUtilityLibrary('/js/markerclusterer.js');
-  GoogleMaps.loadUtilityLibrary('/packages/adamkaczmarzyk_marker-animate-unobtrusive/marker-animate-unobtrusive/vendor/markerAnimate.js');
-  GoogleMaps.loadUtilityLibrary('/packages/adamkaczmarzyk_marker-animate-unobtrusive/marker-animate-unobtrusive/SlidingMarker.js');
-*/
+
 });
 
 Template.map.onRendered(function () {
-
-  /*
 
   let lookup = [];
   let self = this;
@@ -33,15 +27,17 @@ Template.map.onRendered(function () {
     google.maps.event.addListener(map.instance, 'dragend', (e) => { getBox(map); });
     google.maps.event.addListener(map.instance, 'zoom_changed', (e) => { getBox(map); });
 
-    
+  });
+
+    /*
     self.autorun(() => {  
 
       getBox(map);
-      self.subscribe('things.location', Session.get('box'), TAPi18n.getLanguage(), () => {
+      self.subscribe('users.location', Session.get('box'), TAPi18n.getLanguage(), () => {
 
         // Map stuff
         let markers = [];
-        Things.find({haslocation:true}).forEach((doc) => {
+        Users.find({haslocation:true}).forEach((doc) => {
 
           let lat = doc.location.coordinates[1];
           let lng = doc.location.coordinates[0];
@@ -79,13 +75,13 @@ Template.map.onRendered(function () {
 
       });
     });
-   
-   });
     */
+
 });
 
 Template.map.onDestroyed(() => {
 
+  console.log("map destroyed");
   delete(GoogleMaps.maps.bigmap);
 });
 
@@ -93,12 +89,12 @@ Template.map.helpers({
   ops () {
     if (GoogleMaps.loaded()) {
       
-      let lat = 59.9241;
+      let lat = 58.0041;
       let lng = 25.7482;
 
       return {
         center: new google.maps.LatLng(lat, lng),
-        zoom: 6,
+        zoom: 5,
         scrollwheel: false,
         backgroundColor: "rgba(255, 255, 255, 1)",
         mapTypeControl: false,

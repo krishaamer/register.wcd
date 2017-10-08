@@ -12,6 +12,10 @@ Template.live.onCreated(function (){
 	//google.maps.event.trigger(, 'resize');
 });
 
+Template.live.onRendered(function (){
+	
+});
+
 Template.live.helpers({
 	register () {
 

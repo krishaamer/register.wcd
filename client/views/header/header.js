@@ -78,10 +78,9 @@ Template.header.onRendered(function () {
 
   let self = this;
   self.autorun(() => {
-
+    self.subscribe('allUsers');
     $('.ui.dropdown').dropdown({
       onChange (value) {
-
         TAPi18n.setLanguage(value);
       }
     });
@@ -92,5 +91,9 @@ Template.header.onRendered(function () {
 Template.header.helpers({
 	connected () {
 		return Meteor.status().connected;
-	}
+	},
+  count () {
+    
+    return Meteor.users.find().count();
+  },
 });

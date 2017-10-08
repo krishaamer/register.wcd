@@ -1,7 +1,8 @@
 <template name="live">
-	<div class="ui fluid container" style="position: absolute;top: 0;">
+	<div class="ui fluid container" style="position: absolute;top: 0;height: 500px;" id="map-supercontainer">
 		{{> map}}
 	</div>
+	{{> leader}}
 	{{> people}}
 	<div class="ui fluid container" style="background-color: #ffd101;">
 		<div class="ui container">
@@ -9,7 +10,7 @@
 				<div class="ui basic segment">
 					<div class="ui very padded basic segment">
 
-						<h1>{{_ "Why not tell us more about you?"}}</h1>
+						<h1>{{_ "Tell us more about you"}}</h1>
 
 						<h1>{{_ "I am"}}</h1>
 

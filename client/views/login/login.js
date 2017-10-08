@@ -116,17 +116,6 @@ Template.login.events({
     }
 
   },
-  "click #logout": function (err, tmpl) {
-    Meteor.logout(function (err) {      
-      if (err) {
-        //Session.set("status", err.reason);
-        //analytics.track("Logout error");
-        
-      } else {
-        //analytics.track("Logout success");
-      }
-    })
-  },
   "click #login-fb": function (err, tmpl) {
     
     //analytics.track("Login Clicked");
@@ -149,5 +138,16 @@ Template.login.events({
 
           FlowRouter.go("/live");
       });
+  },
+  "click #logout": function (err, tmpl) {
+    Meteor.logout(function (err) {      
+      if (err) {
+        //Session.set("status", err.reason);
+        //analytics.track("Logout error");
+        
+      } else {
+        //analytics.track("Logout success");
+      }
+    })
   },
 })

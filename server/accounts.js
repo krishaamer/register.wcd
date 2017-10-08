@@ -20,16 +20,11 @@ Accounts.onCreateUser(function (options, user) {
 		  to: userPhone,
 		  body: "Yay! Welcome to World Cleanup Day! You've registered your phone number " + userPhone + " to receive updates.",
 		});
-
-		/*
-		//console.log('Phone verification status is :', Accounts.isPhoneVerified());
-		*/
 	}
 
 	if (user.services.email) {
 
-		console.log("email");
-
+		// Do nothing, handled on client
 	}
 
 	if (user.services.facebook) {
@@ -53,6 +48,8 @@ Accounts.onCreateUser(function (options, user) {
 			options.profile.message		= "";
 			user.profile = options.profile;
 		}
+
+		Accounts.sendVerificationEmail(user._id);
 	}
 	
     return user;
@@ -94,20 +91,3 @@ Meteor.publish("current_user_data", function () {
 	return Meteor.users.find({_id: this.userId},
 		{fields: {'profile.first_name': 1, 'profile.last_name': 1, 'profile.picture': 1}});
 });
-
-Accounts.emailTemplates.siteName = "World Cleanup Day";
-Accounts.emailTemplates.from = "World Cleanup Day <hi@worldcleanupday.com>";
-Accounts.emailTemplates.resetPassword = {
-  subject(user) {
-    return "Reset your password on World Cleanup Day";
-  },
-  text(user, url) {
-    return `Hello!
-		Click the link below to reset your password on Meteor Todos.
-		${url}
-		If you didn't request this email, please ignore it.
-		Thanks,
-		World Cleanup Day`
-  },
-  html(user, url) {}
-};
