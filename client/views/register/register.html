@@ -1,34 +1,16 @@
 <template name="register">
-	{{#if Template.subscriptionsReady}}
-		{{#with register}}
-			<div class="ui center aligned grid container" id="register">
-				<div class="sixteen wide column elementToFadeInAndOut">
-					<div class="ui very padded basic segment">
-						<h1 class="title">{{paragraph1}}</h1>
-						<div class="ui text container" id="registerForm">
-							<div class="ui massive form">
-							    <div class="inline fields">
-							      <input placeholder="{{_ 'Phone number'}}" type="text">
-							      <div class="ui massive positive submit button">{{_ "Get Invite!"}}</div>
-							    </div>
-							</div>
-						</div>
-						<div class="ui label">{{paragraph2}}</div>
-					</div>
-				</div>
-			</div>
-		{{/with}}
-	{{else}}
-		{{> loading}}
-	{{/if}}
 	<div class="ui fluid container" style="position: absolute;top: 0;">
 		{{> map}}
+	</div>
+	<div class="ui fluid container" style="position: absolute;top: 0;z-index: 999; height: 100px; background-color: #f00;">
+		{{> people}}
 	</div>
 	<div class="ui fluid container" style="background-color: #ffd101;">
 		<div class="ui container">
 			<div class="ui text container elementToFadeInAndOut">
 				<div class="ui basic segment">
 					<div class="ui very padded basic segment">
+
 						<h1>{{_ "Why not tell us more about you?"}}</h1>
 
 						<h1>{{_ "I am"}}</h1>
