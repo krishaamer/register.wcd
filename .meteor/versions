@@ -40,7 +40,6 @@ ecmascript-runtime-client@0.5.0-rc.3
 ecmascript-runtime-server@0.5.0-rc.3
 ejson@1.1.0-rc.3
 email@1.2.3
-enweiwt:accounts-phone@0.0.23
 es5-shim@4.6.15
 facebook-oauth@1.4.0-rc.3
 fortawesome:fontawesome@4.7.0
@@ -116,6 +115,7 @@ srp@1.0.10
 standard-minifier-js@2.2.0-rc.3
 tap:i18n@1.8.2
 tap:i18n-ui@0.8.0
+tbuglc:accounts-phone@0.0.21
 templating@1.3.2
 templating-compiler@1.3.3
 templating-runtime@1.3.2

@@ -3,10 +3,11 @@
 		<form class="ui massive form mailer">
             <div class="field">
 			    <label>Short Text</label>
-			    <textarea rows="2">{{message}}</textarea>
+			    <textarea rows="2" name="mail">{{message}}</textarea>
 			</div>
 			<div class="field">
-				<button class="ui large pink button">{{_ "Send!"}}</button>
+				<button class="ui large pink button mailer">{{_ "Send!"}}</button>
+				<span class="padding-left:1.5rem;padding-top:0.5rem;">{{status}}</span>
 			</div>
 		</form>
 	</div>

@@ -11,3 +11,7 @@ Meteor.publish('register', (lang) => {
 Meteor.publish('allUsers', function(){
     return Meteor.users.find();
 });
+
+Meteor.publish("allUserData", function () {
+  return Meteor.users.find({}, {fields: {'phone.number': 1}});
+});

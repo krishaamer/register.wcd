@@ -58,6 +58,7 @@ Template.login.events({
     if (phone.value) {
 
       let userPhone = phone.value;
+
       Accounts.createUserWithPhone({
         phone: userPhone,
         profile: {

@@ -1,6 +1,6 @@
 Template.map.onCreated(() => {
 
-  console.log("map created");
+  //console.log("map created");
   GoogleMaps.load({ v: '3', key: Meteor.settings["public"].GoogleMapKey, libraries: 'geometry,places'});
 
 });
@@ -81,7 +81,7 @@ Template.map.onRendered(function () {
 
 Template.map.onDestroyed(() => {
 
-  console.log("map destroyed");
+  //console.log("map destroyed");
   delete(GoogleMaps.maps.bigmap);
 });
 
