@@ -2,14 +2,18 @@
 	{{#if Template.subscriptionsReady}}
 		{{#with intro}}
 		<div class="ui text container elementToFadeInAndOut">
-			{{#unless currentUser}}
-				{{> login}}
-			{{/unless}} 
 			{{#if currentUser}}
 				<button class="ui large blue button" id="logout" data-content="{{_ 'Logout'}}" data-variation="inverted">
 					<i class="lock icon"></i>
 					{{_ "Log out"}} {{helloName}}!
 				</button>
+
+				<a class="ui large blue button" href="/register">
+					<i class="map icon"></i>
+					{{_ "See livemap"}}
+				</a>
+			{{else}}
+				{{> login}}
 			{{/if}}
 		</div>
 		{{/with}}

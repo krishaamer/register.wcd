@@ -1,42 +1,34 @@
-Template.login.onRendered(function (){
-	
-	$('.ui.dropdown').dropdown();
-  Session.set('error', '');
+Template.login.onCreated(() => {
 
-  AllGeo.getLocationByNavigator(function(loc){
+  AllGeo.getLocationByNavigator((loc) => {
 
     Meteor.call('geocode', loc, (error, result) => {
 
       let countryCode = result[0].countryCode;
       countryCode = countryCode.toLowerCase();
-
       $('.ui.dropdown').dropdown('set selected', countryCode);
+
+      if (Meteor.user()) {
+
+        Meteor.users.update({_id: Meteor.userId()}, {
+          $set: {
+            'profile.gps': result[0] 
+          }
+        });
+      }
+  
+
+
+        console.log(result[0]);
+      
     });    
   });
+});
 
-	$('.register').form({
-	    on: 'blur',
-	    fields: {
-	      empty: {
-	        identifier  : 'empty',
-	        rules: [
-	          {
-	            type   : 'empty',
-	            prompt : 'Please enter a value'
-	          }
-	        ]
-	      },
-	      dropdown: {
-	        identifier  : 'dropdown',
-	        rules: [
-	          {
-	            type   : 'empty',
-	            prompt : 'Please select a dropdown value'
-	          }
-	        ]
-	      },
-	    }
-	  });
+Template.login.onRendered(() => {
+	
+	$('.ui.dropdown').dropdown();
+  Session.set('error', '');
 });
 
 Template.login.helpers({
@@ -60,7 +52,10 @@ Template.login.events({
 
     if (!phone.value && !email.value) {
 
-      Session.set('error', 'Please provide at least one contact method');
+      let warning = 'Please provide at least one contact method';
+      Session.set('error', warning);
+      Bert.alert(warning, 'danger');
+
     } else {
 
       //FlowRouter.go("/register");
@@ -75,18 +70,22 @@ Template.login.events({
           name: 'My friend',
           phone: userPhone,
         }
-      }, () => {
+      }, (error) => {
 
-        Meteor.setTimeout(() => {
-          FlowRouter.go("/register");
-        }, 500);
+        if (error) {
+          Bert.alert(error.reason, 'danger');
 
-        Session.set("error", "User registered! Redirecting..");
+        } else {
 
+          Meteor.setTimeout(() => {
+            FlowRouter.go("/register");
+          }, 500);
+
+          Session.set("error", "User registered! Redirecting..");
+        }
       });
 
       Session.set("error", "Thank you and welcome!");
-
     }
 
     if (email.value) {
@@ -102,12 +101,16 @@ Template.login.events({
           Bert.alert(error.reason, 'danger');
 
         } else {
-          Meteor.call('sendVerificationLink', ( error, response ) => {
+          Meteor.call('sendVerificationLink', (error, response) => {
             if (error) {
 
-              Bert.alert( error.reason, 'danger' );
+              Bert.alert(error.reason, 'danger');
 
             } else {
+
+              Meteor.setTimeout(() => {
+                FlowRouter.go("/register");
+              }, 300);
 
               Bert.alert( 'Welcome!', 'success' );
             }
@@ -152,35 +155,5 @@ Template.login.events({
 
           FlowRouter.go("/register");
       });
-  },
-  "click #login-email": function (err, tmpl) {
-    
-      //analytics.track("Login Clicked");    
-  },
-  "click #login-phone": function (err, tmpl) {
-    
-      let options = {phone:'+37253073123'};
-      //options.password = 'VeryHardPassword';
-
-      Accounts.createUserWithPhone(options, function (){});
-      
-      /*
-      // Debug: Verify the user phone isn't confirmed it.
-      console.log('Phone verification status is :', Accounts.isPhoneVerified());
-      var userPhone = '+37253073123';
-      // Request for sms phone verification -- please note before receiving SMS you should Follow the SMS Integration tutorial below
-      Accounts.requestPhoneVerification(userPhone, function(){});
-      //Debug:  Verify the user phone isn't confirmed it.
-      console.log('Phone verification status is :', Accounts.isPhoneVerified());
-
-      // After receiving SMS let user enter his code and verify account by sending it to the server
-      var verificationCode = 'CodeRecivedBySMS';
-      var newPassword = null;
-      // You can keep your old password by sending null in the password field
-      Accounts.verifyPhone(userPhone, verificationCode, function(){});
-      //Debug:  Verify the user phone is confirmed.
-      console.log('Phone verification status is :', Accounts.isPhoneVerified());
-      */
-    
   },
 })
