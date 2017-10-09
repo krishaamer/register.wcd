@@ -34,6 +34,7 @@ Template.mailer.events({
 		    /* Emails */
 		    if (item.emails) {
 
+		    	/*
 		    	Meteor.call(
 				  'sendEmail',
 				  item.emails[0].address,
@@ -41,11 +42,13 @@ Template.mailer.events({
 				  "World Cleanup Day",
 				  mail.value
 				);
+				*/
 		    }
 
 		    /* Phones */
-		    if (item.phone)
-		    	console.log(item.phone.number);
+		    if (item.phone) {
+		    	/* console.log(item.phone.number); */
+		    }
 		}) 
 	},
 });
